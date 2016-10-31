@@ -70,7 +70,7 @@ def mid_point(x):
 	total = sum(x)
 	for i in xrange(len(x)):
 		if total == 0:
-			return i
+			return i-1
 		total -= x[i]
 
 	#if no point found we return -1
@@ -85,6 +85,12 @@ def count_1_bits(n):
     return total
 
 
+'''How many bits need to be flipped to make
+two integers equal to eachother'''
+def how_many_flips(a,b):
+	x = a^b
+	return count_1_bits(x)
+
 if __name__ == '__main__':
 	print count_trailing_zeros_in_fact(25)
 	print powerset([1,2,3])
@@ -94,3 +100,4 @@ if __name__ == '__main__':
 	print mid_point([1,2,3,4,5])
 	print mid_point([2,-1,2,3,4,-4])
     print count_1_bits(10)
+    print how_many_flips(10,5)
