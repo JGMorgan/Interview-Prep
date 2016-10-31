@@ -163,14 +163,10 @@ def prefix(A):
         for c in x:
             if c in temp.table:
                 temp.table[c].val += 1
-                print c
-                print temp.table[c].val
                 temp = temp.table[c]
             else:
                 temp.table[c] = Trie()
                 temp.table[c].val = 1
-                print c
-                print temp.table[c].val
                 temp = temp.table[c]
     for i in xrange(len(A)):
         temp = trie
