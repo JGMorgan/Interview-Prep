@@ -183,6 +183,25 @@ def prefix(A):
                     out[i]+=c
         return out
 
+'''
+O(1) time complexity
+O(1) space complexity since a 64 bit int can only have 20 digits
+Given a number find the next number that is a palindome,
+For example if given 10 you should return 11 since 11 is the first
+palindome after 10, if given 19 you should return 22 for the same reason.
+'''
+import math
+def next_palindome(n):
+	s = str(n)
+	left = s[:len(s)/2]
+	right = s[int(math.ceil(len(s)/2)):]
+	if int(left[::-1]) > int(right):
+		return int(left + left[::-1])
+	else:
+		left = left[:len(left)-1] + str(int(left[len(left)-1]) + 1)
+		return int(left + left[::-1])
+	
+	
 
 if __name__ == '__main__':
 	print count_trailing_zeros_in_fact(25)
@@ -196,3 +215,4 @@ if __name__ == '__main__':
     print how_many_flips(10,5)
     print swap_no_temp_variable([1,2,3],0,2)
     print prefix([ "zebra", "dog", "duck", "dot" ])
+	print next_palindome(19)
