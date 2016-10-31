@@ -1,5 +1,9 @@
-'''returns the number of trailing zeroes
-in n factorial'''
+'''
+O(logn) time complexity
+O(1) space complexity
+returns the number of trailing zeroes
+in n factorial
+'''
 def count_trailing_zeros_in_fact(n):
 	count = 0
 	i = 5
@@ -9,7 +13,11 @@ def count_trailing_zeros_in_fact(n):
 	return count
 
 
-'''returns the powerset of a set'''
+'''
+O(2^n) time complexity
+O(2^n) space complexity
+returns the powerset of a set
+'''
 def powerset(x):
 	out = [[]]
 	for elem in x:
@@ -20,8 +28,12 @@ def powerset(x):
 	return out
 
 
-'''returns all permutations of
-a given string'''
+'''
+O(n!) time complexity
+O(n!) space complexity
+returns all permutations of
+a given string
+'''
 def perms_of_string(x):
 	return perms_of_string_help(x,'',[])
 
@@ -36,8 +48,12 @@ def perms_of_string_help(start,end,li):
 	return li
 
 
-'''returns the max sum that any subset
-of a given set can have'''
+'''
+O(n) time complexity
+O(1) space complexity
+returns the max sum that any subset
+of a given set can have
+'''
 def max_subarray(x):
     biggest = 0
     for elem in x:
@@ -48,8 +64,12 @@ def max_subarray(x):
     return biggest
 
 
-'''returns the max sum of a consecutive
-sub list in a list'''
+'''
+O(n) time complexity
+O(1) space complexity
+returns the max sum of a consecutive
+sub list in a list
+'''
 def max_continuous_subarray(x):
 	biggest = 0
 	this_subarray = 0
@@ -63,9 +83,13 @@ def max_continuous_subarray(x):
 	return biggest
 
 
-'''Given a list find a point where the sum of
+'''
+O(n) time complexity
+O(1) space complexity
+Given a list find a point where the sum of
 the elements on the left == the sum of the
-elements on the right'''
+elements on the right
+'''
 def mid_point(x):
 	total = sum(x)
 	for i in xrange(len(x)):
@@ -76,7 +100,12 @@ def mid_point(x):
 	#if no point found we return -1
 	return -1
 
-'''count the number of 1 bits in an int'''
+'''
+O(1) time complexity since it can only run atmost 64 time
+O(number of 1 bits) is also a valid time complexity
+O(1) space complexity
+count the number of 1 bits in an int
+'''
 def count_1_bits(n):
     total = 0
     while n != 0:
@@ -85,28 +114,41 @@ def count_1_bits(n):
     return total
 
 
-'''How many bits need to be flipped to make
-two integers equal to eachother'''
+'''
+O(1) time complexity since it can only run atmost 64 time
+O(number of 1 bits) is also a valid time complexity
+O(1) space complexity
+How many bits need to be flipped to make
+two integers equal to eachother
+'''
 def how_many_flips(a,b):
 	x = a^b
 	return count_1_bits(x)
 
 
-'''swap two elements in a list without
-using any temporary variables'''
-def swap(li, x, y):
+'''
+O(1) time complexity
+O(1) space complexity
+swap two elements in a list without
+using any temporary variables
+'''
+def swap_no_temp_variable(li, x, y):
 	li[x] += li[y]
 	li[y] = li[x] - li[y]
 	li[x] -= li[y]
 	return li
 
 
-'''Find shortest unique prefix to represent each word in the list.
+'''
+O(n*m) time complexity where m is the length of the longest string
+O(m) space complexity since each hashmap can only contain 26 keys
+Find shortest unique prefix to represent each word in the list.
 This question didn't make much sense to me when
 I first read it but basically you are supposed
 return the shortest prefix that doesn't exist in any other word
 if given ['dog', 'duck'] both begin with 'd' so the shortest prefixes
-are ['do', 'du']'''
+are ['do', 'du']
+'''
 class Trie:
     def __init__(self):
         self.table = {}
@@ -152,5 +194,5 @@ if __name__ == '__main__':
 	print mid_point([2,-1,2,3,4,-4])
     print count_1_bits(10)
     print how_many_flips(10,5)
-    print swap([1,2,3],0,2)
+    print swap_no_temp_variable([1,2,3],0,2)
     print prefix([ "zebra", "dog", "duck", "dot" ])
