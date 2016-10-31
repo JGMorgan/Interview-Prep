@@ -199,7 +199,26 @@ def next_palindome(n):
         left = left[:len(left)-1] + str(int(left[len(left)-1]) + 1)
         return int(left + left[::-1])
 	
-	
+'''
+O(n*m) time complexity
+O(n*m) space complexity
+Given the height and width of a minesweeper board
+and the number of bombs, return a board that has those
+bombs evenly distributed
+'''
+import random
+def minesweeper(m, n, x):
+    board = [[0 for _ in xrange(n)] for _ in xrange(m)]
+    spaces_left = m*n
+    for i in xrange(len(board)):
+        for j in xrange(len(board[i])):
+            if x != 0:
+                if random.randint(0, int(spaces_left/x)) == 0:
+                    board[i][j] = 1
+                    x -= 1
+                spaces_left -= 1
+    return board
+
 
 if __name__ == '__main__':
     print count_trailing_zeros_in_fact(25)
@@ -214,3 +233,4 @@ if __name__ == '__main__':
     print swap_no_temp_variable([1,2,3],0,2)
     print prefix([ "zebra", "dog", "duck", "dot" ])
     print next_palindome(19)
+    print minesweeper(5,5,10)
