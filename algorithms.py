@@ -91,6 +91,16 @@ def how_many_flips(a,b):
 	x = a^b
 	return count_1_bits(x)
 
+
+'''swap two elements in a list without
+using any temporary variables'''
+def swap(li, x, y):
+	li[x] += li[y]
+	li[y] = li[x] - li[y]
+	li[x] -= li[y]
+	return li
+
+
 if __name__ == '__main__':
 	print count_trailing_zeros_in_fact(25)
 	print powerset([1,2,3])
@@ -101,3 +111,4 @@ if __name__ == '__main__':
 	print mid_point([2,-1,2,3,4,-4])
     print count_1_bits(10)
     print how_many_flips(10,5)
+    print swap([1,2,3],0,2)
