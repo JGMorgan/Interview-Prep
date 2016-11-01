@@ -198,7 +198,8 @@ def next_palindome(n):
     else:
         left = left[:len(left)-1] + str(int(left[len(left)-1]) + 1)
         return int(left + left[::-1])
-	
+
+
 '''
 O(n*m) time complexity
 O(n*m) space complexity
@@ -220,6 +221,15 @@ def minesweeper(m, n, x):
     return board
 
 
+'''
+O(1) time complexity
+O(1) space complexity
+Check if an integer is a power of 2
+'''
+def isPowerOfTwo(n):
+    return a & (a-1) == 0
+
+
 if __name__ == '__main__':
     print count_trailing_zeros_in_fact(25)
     print powerset([1,2,3])
@@ -234,3 +244,4 @@ if __name__ == '__main__':
     print prefix([ "zebra", "dog", "duck", "dot" ])
     print next_palindome(19)
     print minesweeper(5,5,10)
+    print isPowerOfTwo(128)
