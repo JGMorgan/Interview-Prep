@@ -91,14 +91,21 @@ the elements on the left == the sum of the
 elements on the right
 '''
 def mid_point(x):
-    total = sum(x)
-    for i in xrange(len(x)):
+    total = sum(x)/2
+    length = len(x)
+    secondLoop = False
+    mid_point = -1
+    for i in xrange(length):
         if total == 0:
-            return i-1
+            if secondLoop:
+                return mid_point
+            else:
+                secondLoop = True
+                total = sum(x)/2
+                mid_point = i-1
         total -= x[i]
-
     #if no point found we return -1
-    return -1
+    return mid_point
 
 
 '''
@@ -227,7 +234,7 @@ O(1) space complexity
 Check if an integer is a power of 2
 '''
 def isPowerOfTwo(n):
-    return a & (a-1) == 0
+    return n & (n-1) == 0
 
 
 '''
