@@ -58,3 +58,18 @@ of boolean algebra.
 Try to translate binary operations into normal terms. If you are trying to see
 what bits are different in two binary strings then XOR will do the trick but if
 you want to see what is identical in two binary strings then AND will do it.
+
+### Design Questions
+These typically do not involve coding but at times will involve coding. When
+these questions do require coding it usually does not involve any complex 
+algorithms so do not worry. 
+
+Make sure you know good Object Oriented practices and how to scale your
+application. For these questions there are no right answers but plenty of wrong
+answers. 
+
+**Be prepared to answer the question "Why?".** Regardless of how good of a 
+certain design decision is there is a good chance they are going to tell you
+something that you could've done instead. **This doesn't mean that what you said
+is wrong or that you should back down.** Argue your point and if you know what 
+you're talking about then this interview should be a breeze.
