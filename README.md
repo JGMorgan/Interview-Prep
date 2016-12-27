@@ -28,6 +28,16 @@ interviewer is going to be an engineer. Don't forget they're judging how good of
 a coworker you would make.Just act like you would around other engineers even if
 non engineers wouldn't consider your behavior to be normal.
 
+### Big Oh
+**This is extremely important.** You should be able to tell someone the time and
+space complexity of your algorithm without having to think about it. Often times
+you will be told to write and algorithm and you will be given a target time and 
+space complexity or you will be told to write an algorithm and be asked about the
+time and space complexity after you implement it.
+
+If you can't figure out the time and space complexity of most of the algorithms 
+implemented here in less than a minute you **NEED** to study up on Big Oh.
+
 ### String Manipulation
 While manipulating strings might be easy make sure you know how to efficiently
 mutate strings in your language of choice.
