@@ -78,8 +78,45 @@ def ways_from_topleft_to_bottomleft(m, n):
     return table[n-1][m-1]
 
 
+'''
+O(n^2) time complexity
+O(n) space complexity
+Given an array of boxes find the height of the heighest stack
+of boxes you can make. You can only stack a box on top of another
+box if the base of the box below is smaller than the box on top
+boxes is an array of tuples (h,w,d)
+'''
+def max_height(boxes):
+    W = 1
+    H = 0
+    D = 2
+    rotated_boxes = []
+    for box in boxes:
+        rotated_boxes.append(box)
+        rotated_boxes.append((box[W], box[H], box[D]))
+        rotated_boxes.append((box[D], box[H], box[W]))
+
+    rotated_boxes.sort(key = lambda box: box[W] * box[D])
+    rotated_boxes = rotated_boxes[::-1]
+
+    max_heights = [0 for _ in xrange(len(rotated_boxes) + 1)]
+
+    for i in xrange(1, len(rotated_boxes) + 1):
+        max_height_i = 0
+        for j in xrange(i):
+            if rotated_boxes[j][W] > rotated_boxes[i-1][W] and rotated_boxes[j][D] > rotated_boxes[i-1][D]:
+                if max_heights[max_height_i] < max_heights[j+1]:
+                    max_height_i = j + 1
+
+        max_heights[i] = max_heights[max_height_i] + rotated_boxes[i-1][H]
+
+    return max_heights[len(max_heights) - 1]
+
+
+
 if __name__ == '__main__':
-    print max_subarray([2,-1,2,3,4,-5])
-    print max_continuous_subarray([2,-1,2,3,4,-5])
+    print max_subarray([2, -1, 2, 3, 4, -5])
+    print max_continuous_subarray([2, -1, 2, 3, 4, -5])
     print ways_to_make_change(420)
     print ways_from_topleft_to_bottomleft(6, 5)
+    print max_height([(4, 7, 9), (5, 8, 9), (11, 20, 40), (1, 2, 3)])
