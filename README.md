@@ -69,6 +69,23 @@ Try to translate binary operations into normal terms. If you are trying to see
 what bits are different in two binary strings then XOR will do the trick but if
 you want to see what is identical in two binary strings then AND will do it.
 
+### Language Choice
+Unless you're interviewing for a start up typically you are free to choose any 
+programmer language. Always choose a language that is very readable and one 
+that the interviewer is likely to know. That being said do not use a purely 
+functional programming language. Some interviewers probably won't be able to 
+understand your code and you don't want that. If they don't understand it means 
+you have to do a really good job of explaining even if your code does work. 
+
+Make sure you are extremely comfortable with atleast one Object Oriented 
+language. Some good choices are Python, Ruby, Java, C# and C++. Those languages 
+are very commonly used by candidates so your interviewer should be able to 
+understand and if they don't know one of them the syntax should be familiar 
+enough that they will understand. 
+
+I highly recommend Python or some other very high level language since you can 
+implement more with less lines of code and time is limited during the interview.
+
 ### How to Answer an Algorithm Question
 Now that you know what kind of questions you might get and what Big Oh is you
 actually have to come up with solutions to algorithm questions. **Don't be
